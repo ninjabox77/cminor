@@ -12,7 +12,7 @@ main {
 
 <b>Note</b>: There is a good possibility that you will encounter compile problems or miscompilations if you attempt to compile a program other than the compiler itself. This is basically a one-man project, and I have spent only a few months of my spare time so far.
 
-## Authors
+### Authors
 
 * John Minor
 * Benjamin Cisneros (<benjcisneros@gmail.com>)
