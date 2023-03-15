@@ -21,14 +21,19 @@ main {
 
 Every value in C-Minor has a specific data type, which lets it know what kind of data is being specified and how to deal with it. Keep in mind that C-Minor is a *statically typed* language, which means that it needs to know the types of all variables at compile-time. However, the compiler can usually infer what type we want to use based on the value and how to use it. We will look at two data type subsets: *discrete* and *scalar*.
 
-Discrete types consists of boolean, integer, character, and enumeration types (as named in *type* declarations). In C-Minor, the programmer may specify a range for each integer variable, and the compiler wills select the correct representation for that use. This allows, for example, for the creation of a subtype of `CHAR` that contains just the uppercase letters, `CHAR: 'A'..'Z'`. On the other hand, scalar types include string and floating point numbers. `STRING` is a built-in, dynamic-length string type that automatically allcoates and deallocates space whenever needed (similiar to the `string` library of C++). Instead of requiring programmers to choose a hardware representation for their `FLOAT` variables, which is low-level, C-Minor a Table 1 shows the built-in descrete types in C-Minor. 
+Discrete types consists of boolean, integer, character, and enumeration types (as named in *type* declarations). In C-Minor, the programmer may specify a range for each integer variable, and the compiler will select the correct representation for that use. This allows, for instance, for the creation of a subtype of `CHAR` that contains just the uppercase letters, `CHAR: 'A'..'Z'`. Scalar types, however, include string and floating point numbers. `STRING` is a built-in, dynamic-length string type that automatically allocates and deallocates memory whenever needed (similiar to the `string` library of C++). Instead of requiring programmers to choose a hardware representation for their `FLOAT` variables, which is low-level, C-Minor allows programmers to select the number of digits of precision that is needed, giving a more accurate representation to guarantee the accuracy desired. Table 1 shows the built-in data types in C-Minor. 
 
 <div align="center">
   
-| Keyword | Description | Range | Coercion |
+| Type Name | Keyword | Implementation | Group |
 |:---------|-------------|-------|----------|
-| `BOOL` | true or false | false, true | none |
-| `INT` | signed numbers | −9,223,372,036,854,775,808 - 9,223,372,036,854,775,807 | rounds floating point value |
+| Boolean | `BOOL` | boolean | Discrete |
+| Integer | `INT` | int64 | Discrete |
+| Character | `CHAR` | string | Discrete |
+| Enumeration | `type` | enum | Discrete |
+| Floating Point | `FLOAT` | double | Scalar |
+| String | `STRING` | string | Scalar |
+| Class | `identifier` | class | Object |
 
-  <p>Table 1: Descrete types</p>
+  <p>Table 1: Data types.</p>
 </div>
