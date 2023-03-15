@@ -28,6 +28,7 @@ Discrete types consists of boolean, integer, character, and enumeration types (a
 | Keyword | Description | Range | Coercion |
 |:---------|-------------|-------|----------|
 | `BOOL` | true or false | false, true | none |
+| `INT` | signed numbers | −9,223,372,036,854,775,808 - 9,223,372,036,854,775,807 | rounds floating point value |
 
-  <i>Table 1: Descrete types*</i>
+  <p>Table 1: Descrete types</p>
 </div>
