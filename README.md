@@ -15,4 +15,4 @@ main {
 ## Authors
 
 * John Minor
-* Benjamin Cisneros
+* Benjamin Cisneros (<benjcisneros@gmail.com>)
