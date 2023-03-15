@@ -4,7 +4,7 @@ C-Minor is a pedagogical language that has been proposed at the University of Ne
 
 The work will be focused largely on faithfully building a compiler and a virtual machine for the language. An example of a `hello world!` program written in C-Minor is depited below:
 
-```
+```c++
 main {
   out "hello world!"
 }
