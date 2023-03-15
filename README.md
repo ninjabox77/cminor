@@ -16,3 +16,7 @@ main {
 
 * John Minor
 * Benjamin Cisneros (<benjcisneros@gmail.com>)
+
+## Data Types
+
+Every value in C-Minor is of certain data type that tells C-Minor what kind of data is being specified so it knows how to work with that data
