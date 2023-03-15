@@ -26,5 +26,5 @@ Discrete types consists of boolean, integer, character, and enumeration types (a
 <center>
 | Keyword | Description | Range | Coercion |
 |---------|-------------|-------|----------|
-[Table caption]
+*Table 1: Descrete types.*
 </center>
