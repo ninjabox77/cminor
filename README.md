@@ -23,5 +23,8 @@ Every value in C-Minor has a specific data type, which lets it know what kind of
 
 Discrete types consists of boolean, integer, character, and enumeration types (as named in *type* declarations). In C-Minor, the programmer may specify a range for each integer variable, and the compiler wills select the correct representation for that use. Table 1 shows the built-in descrete types in C-Minor. 
 
+<center>
 | Keyword | Description | Range | Coercion |
 |---------|-------------|-------|----------|
+: Table blah
+</center>
