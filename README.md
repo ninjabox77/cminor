@@ -19,4 +19,4 @@ main {
 
 ## Data Types
 
-Every value in C-Minor has a specific data type, which lets it know what kind of data is being specified and how to deal with it. Keep in mind that C-Minor is a *statically typed* language, which means that it needs to know the types of all variables at compile-time; however, the compiler can usually infer what type we want to use based on the value and how to use it. We will look at two data type subsets: discrete and scalar.
+Every value in C-Minor has a specific data type, which lets it know what kind of data is being specified and how to deal with it. Keep in mind that C-Minor is a *statically typed* language, which means that it needs to know the types of all variables at compile-time. However, the compiler can usually infer what type we want to use based on the value and how to use it. We will look at two data type subsets: discrete and scalar.
