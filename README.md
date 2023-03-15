@@ -1,2 +1,2 @@
-# cminor
+# C Minor
 A Pedagogical Language
