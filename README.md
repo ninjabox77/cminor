@@ -175,10 +175,16 @@ The `in` and `out` commands handle I/O using the standard input and output strea
 
 #### Input
 
-The `in` statement accepts a comma separated list of scalar or discrete variables. Each variable may include a helpful suggestion text for the user by utilizing a *string* followed by a `:` before the variable name. Each incoming input must be coerceable into the specified variable's type. For example:
+The `in` statement accepts a comma separated list of scalar or discrete variables. Each variable may include a helpful suggestion text for the user by utilizing a *string* followed by a `:` before the variable name. Each incoming input must be coerceable into the specified variable's type. Here is an simple example of how to read user input:
 
 ```
 in("Enter a number between 0 and 10" : number)
+```
+
+where `number` is declared as
+
+```
+INT number
 ```
 
 #### Output
@@ -188,6 +194,10 @@ The user can generate console output by utilizing the out statement. `out` accep
 Floating point values can also specify a number of decimal places to round to (including 0). Note that in order to utilize this feature, the value must first specify a minimum width using the preceding operator followed by a dot operator `.` followed by another integer value. `type` values (or enumerations) when passed to the out statement are output as the name of the enumeration rather than their ranking or numeric equivalent. An enumeration named `Tuesday` of the type `weekdays` would be output as the string `Tuesday`.
 
 Again, in place of a value, the user can also include the keyword `endl` in the list of values to output. This will insert line feed and/or carriage returns as appropriate.
+
+```
+out number endl
+```
 
 
 # License
