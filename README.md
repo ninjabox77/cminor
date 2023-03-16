@@ -54,3 +54,7 @@ func a_function() => void {
 ```
 
 The `func` keyword is preceded by modifiers, and followed by a parameter list, an arrow, a return type, and a block to execute upon being called. Functions can either be value returning or `void`. A value returning function must specify the type for its return value and must include a `return` statement with an appropriate expression
+
+# License
+
+C-Minor is distributed under the terms of the [MIT License](https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt).
