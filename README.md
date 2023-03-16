@@ -37,3 +37,7 @@ Discrete types consists of boolean, integer, character, and enumeration types (a
 
   <p>Table 1: Data types.</p>
 </div>
+
+## Functions
+
+While not the same as methods, functions allow programmers to encapsulate a small subprogram that may be called by its unique identifier and a set of optional values. Functions can either be value returning or `void`. A value returning function must specify the type for its return value and must include a `return` statement with an appropriate expression
