@@ -56,8 +56,8 @@ main {
   a_function()
 }
 
-func a_function() => void {
-  out "from a_function"
+func a_function(STRING s) => void {
+  out "from " + s
 }
 ```
 The `func` keyword is preceded by optional modifiers, and followed by a parameter list, an arrow, a return type, and a block to execute upon being called. Functions can either return a direct result (have a non-`void` return type) or work entirely through side-effects (a `void` result). Non-`void` functions may have side-effects, but if declared `pure`, the compiler will check and warn the user if any side-effects are being used. Note that a `void` function that is also labeled pure will do nothing.
