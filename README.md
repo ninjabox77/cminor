@@ -54,6 +54,12 @@ func a_function() => void {
 ```
 The `func` keyword is preceded by optional modifiers, and followed by a parameter list, an arrow, a return type, and a block to execute upon being called. Functions can either return a direct result (have a non-`void` return type) or work entirely through side-effects (a `void` result). Non-`void` functions may have side-effects, but if declared `pure`, the compiler will check and warn the user if any side-effects are being used. Note that a `void` function that is also labeled pure will do nothing.
 
+The default implementation for functions is non-recursive, because that is the more common use and requires the least amount of run-time overhead. If recursion is desired, the function must be declared `recurs`.
+
+### Parameters
+
+We can specify that a function has parameters, which are unique variables that are part of the signature of the function. Notice that *all* functions can employ static parametric polymorphism by specifying and using type parameters. If a type parameter is labeled `discr` (discrete), then it is restricted to bein called only with a *discrete type* argument; `scalar` requires a *scalar type*; and a `class` requires an *identifier* argument only. The unspecified default allows any legal *type* as an argument.
+
 # License
 
 C-Minor is distributed under the terms of the [MIT License](https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt).
