@@ -130,7 +130,7 @@ Class bodies consist of two declaration sections: `protect` and `public`. The sc
 
 Note the required ordering of class elements (`protect` before `public` and fields before methods). The declarations of fields and methods are analogous to variables and functions, except that fields are not initialized. Conversely the use and the scope rules of methods are very different from functions, so two different terms (`func` and `method`) are used in C-Minor to avoid confusion.
 
-Notes on **inheritance**: A derived type can only add new elements to those that it inherits and can never eliminate any, although it may override an inherited method’s definition with a new one, unless that method is labeled **last**. If a non-**last** method is redefined, then the new definition must use the same signature, type, and scope option as the overridden element; otherwise the compiler will give an error. These requirements ensure that a parent class is always a subtype of all its derived classes. Here is an example of a class in C-Minor:
+Notes on **inheritance**: A derived type can only add new elements to those that it inherits and can never eliminate any, although it may override an inherited method’s definition with a new one, unless that method is labeled **last**. If a non-**last** method is redefined, then the new definition must use the same signature, type, and scope option as the overridden element; otherwise the compiler will give an error. These requirements ensure that a parent class is always a subtype of all its derived classes.
 
 ## I/O Statements
 
