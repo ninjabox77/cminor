@@ -10,7 +10,7 @@ main {
 }
 ```
 
-<b>Note</b>: There is a good possibility that you will encounter compile problems or miscompilations if you attempt to compile a program other than the compiler itself. This is basically a one-man project, and I have spent only a few months of my spare time so far.
+**Note**: There is a good possibility that you will encounter compile errors or miscompilations when you attempt to compile a program other than the compiler itself. This is basically a one-man project, and I have spent only a few months of my spare time so far.
 
 ### Authors
 
@@ -48,11 +48,27 @@ Discrete types consists of boolean, integer, character, and enumeration types (a
 
 ## Arrays
 
-Arrays allow for the creation of an indexable collection of variables under a single identifier. It should be noted that arrays indexes start at 1 in C-Minor rather than at 0. The first element of the array felt a more natural semantic concept rather than the offset value from the array pointer.
+Arrays allow for the creation of an indexable collection of variables under a single identifier. It should be noted that arrays indexes start at 1 in C-Minor rather than at 0. The first element of the array felt a more natural semantic concept rather than the offset value from the array pointer. Arrays are created using brackets `[]`, and their length, which is known at compile time, is part of their type signature `[length]`.
+
+```c++
+INT numbers = { 1, 2, 3, 4, 5 }
+```
+
+The buil-int C-Minor function allows a user to specify a single value inside of `Array(<expression>)` to be assigned to all elements of an array during declaration.
+
+```c++
+INT numbers[5] = Array(0)
+```
+
+A fixed size array can also be created by including the `Array` keyword.
+
+```c++
+INT numbers[5] = Array[5](0)
+```
 
 ## Functions
 
-While not the same as methods, functions allow programmers to encapsulate a small subprogram that may be called by its unique identifier and a set of optional values. For instance, the `main` function, which serves as many programs' entry point, is one of the language's most significant functions, which you have already seen.
+While not the same as methods, functions allow programmers to encapsulate a small subprogram that may be called by its unique identifier and a set of optional values. For instance, the `main` function, which serves as many programs' entry point, is one of the language's most significant functions (which you have already seen).
 
 ```c++
 main {
