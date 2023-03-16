@@ -26,7 +26,7 @@ Discrete types consists of boolean, integer, character, and enumeration types (a
 <div align="center">
   
 | Type Name | Keyword | Implementation | Group |
-|:---------|-------------|-------|----------|
+|:---------|:---------|----------------|-------|
 | Boolean | `BOOL` | boolean | Discrete |
 | Integer | `INT` | int64 | Discrete |
 | Character | `CHAR` | string | Discrete |
