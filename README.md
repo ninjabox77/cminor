@@ -56,7 +56,7 @@ main {
   a_function()
 }
 
-func a_function(STRING s) => void {
+func a_function(in STRING s) => void {
   out "from " + s
 }
 ```
@@ -67,6 +67,12 @@ The default implementation for functions is non-recursive, because that is the m
 ### Parameters
 
 We can specify that a function has parameters, which are unique variables that are part of the signature of the function. Notice that *all* functions can employ static parametric polymorphism by specifying and using type parameters. If a type parameter is labeled `discr` (discrete), then it is restricted to bein called only with a *discrete type* argument; `scalar` requires a *scalar type*; and a `class` requires an *identifier* argument only. The unspecified default allows any legal *type* as an argument.
+
+Each parameter is assigned a *direction* through the use of the `in`, `out`, or `inout` keywords. If no direction is specified, `in` is used as the default behavior.
+
+* `in` Parameters marked as in may be used in expressions. A variable that is not in can only be assigned to. A parameter marked only as in may have an expression as its value in a function call
+* `out` A parameter marked as `out` is essentially passed to the function by reference. Any changes made to the variable will be assigned to the variable used in the function call. Any `out` parameter can only be called with a variable, using a non-variable expression will result in an error. A `out` only variable may only have values assigned to it, it cannot be used as part of an expression.
+* `inout` If both directions are assigned, the parameter can only be called with a variable, can be used in an expression and assigned to. Upon the function's resolution, the value in the parameter will be assigned to its calling variable.
 
 # License
 
