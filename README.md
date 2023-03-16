@@ -2,6 +2,10 @@
 [![java11](https://img.shields.io/badge/java-11%2B-blue)]()
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue)]((https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt))
 
+| []() | |
+|--|--|
+| Notes | Among other small changes in syntax, **Version 2.0** of C-Minor has added global read-write variables, eliminated all semicolons, and has replaced the `==` operator with `=`. **Version 3.0** has added the local command, the uninit label, and separate delimeters for constant lists (`@..@`) and arrays (`[...]`) instead of using braces. |
+
 # C-Minor
 
 C-Minor is a pedagogical language that has been proposed by Dr. John Minor at the University of Nevada Las Vegas (UNLV) to facilitate the learning of programming languages for first years college students. It follows largely C-style syntax and borrows elements from many other languages such as Fortran 90, Ada, LISP, Java, and Pascal. The main paradigms of the language are imperative and object-oriented. The simplified syntax of C-Minor may serve as a stepping stone to other C style languages for novice programmers while avoiding overly complex constructs they have no need of.
@@ -72,11 +76,11 @@ INT numbers[5] = Array[5](0)
 Note that mltidimensional arrays must be full in C-Minor, no jagged arrays are possible. Dimensions are listed in a row-major ordering where spatial adjacency is de- termined by the rightmost index.
 
 ```c++
-INT numbers[3][4][2] = {
-  {{111,112},{121,122},{131,132},{141,142}},
-  {{211,212},{221,222},{231,232},{241,242}},
-  {{311,312},{321,322},{331,332},{341,342}}
-}
+INT numbers[3][4][2] = [
+  [[111,112],[121,122],[131,132],[141,142]],
+  [[211,212],[221,222],[231,232],[241,242]],
+  [[311,312],[321,322],[331,332],[341,342]]
+]
 ```
 
 ### Slices
