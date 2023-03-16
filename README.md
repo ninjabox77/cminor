@@ -40,7 +40,7 @@ Discrete types consists of boolean, integer, character, and enumeration types (a
 
 ## Functions
 
-While not the same as methods, functions allow programmers to encapsulate a small subprogram that may be called by its unique identifier and a set of optional values. The `main` function, which serves as many programs' entry point, is one of the language's most significant functions, which you have already seen. 
+While not the same as methods, functions allow programmers to encapsulate a small subprogram that may be called by its unique identifier and a set of optional values. For instance, the `main` function, which serves as many programs' entry point, is one of the language's most significant functions, which you have already seen.
 
 ```c++
 main {
@@ -52,8 +52,7 @@ func a_function() => void {
   out "from a_function"
 }
 ```
-
-The `func` keyword is preceded by modifiers, and followed by a parameter list, an arrow, a return type, and a block to execute upon being called. Functions can either be value returning or `void`. A value returning function must specify the type for its return value and must include a `return` statement with an appropriate expression
+The `func` keyword is preceded by optional modifiers, and followed by a parameter list, an arrow, a return type, and a block to execute upon being called. Functions can either return a direct result (have a non-`void` return type) or work entirely through side-effects (a `void` result). Non-`void` functions may have side-effects, but if declared `pure`, the compiler will check and warn the user if any side-effects are being used. Note that a `void` function that is also labeled pure will do nothing.
 
 # License
 
