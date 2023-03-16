@@ -40,4 +40,17 @@ Discrete types consists of boolean, integer, character, and enumeration types (a
 
 ## Functions
 
-While not the same as methods, functions allow programmers to encapsulate a small subprogram that may be called by its unique identifier and a set of optional values. Functions can either be value returning or `void`. A value returning function must specify the type for its return value and must include a `return` statement with an appropriate expression
+While not the same as methods, functions allow programmers to encapsulate a small subprogram that may be called by its unique identifier and a set of optional values. The `main` function, which serves as many programs' entry point, is one of the language's most significant functions, which you have already seen. 
+
+```c++
+main {
+  out "hello world!"
+  a_function()
+}
+
+func a_function() => void {
+  out "from a_function"
+}
+```
+
+The `func` keyword is preceded by modifiers, and followed by a parameter list, an arrow, a return type, and a block to execute upon being called. Functions can either be value returning or `void`. A value returning function must specify the type for its return value and must include a `return` statement with an appropriate expression
