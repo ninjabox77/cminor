@@ -4,7 +4,7 @@
 
 | []() | |
 |--|--|
-| Notes | Among other small changes in syntax, **Version 2.0** of C-Minor has added global read-write variables, eliminated all semicolons, and has replaced the `==` operator with `=`. **Version 3.0** has added the local command, the `uninit` label, and separate delimeters for constant lists (`@..@`) and arrays (`[...]`) instead of using braces. |
+| Note | Among other small changes in syntax, **Version 2.0** of C-Minor has added global read-write variables, eliminated all semicolons, and has replaced the `==` operator with `=`. **Version 3.0** has added the local command, the `uninit` label, and separate delimeters for constant lists (`@..@`) and arrays (`[...]`) instead of using braces. |
 
 # C-Minor
 
@@ -18,7 +18,9 @@ main {
 }
 ```
 
-**Note**: There is a good possibility that you will encounter compile errors or miscompilations when you attempt to compile a program other than the compiler itself. This is basically a one-man project, and I have spent only a few months of my spare time so far.
+| []() | |
+|--|--|
+| Note | There is a good possibility that you will encounter compile errors or miscompilations when you attempt to compile a program other than the compiler itself. This is basically a one-man project, and I have spent only a few months of my spare time so far.|
 
 ### Authors
 
