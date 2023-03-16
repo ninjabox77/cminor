@@ -2,7 +2,7 @@
 [![java11](https://img.shields.io/badge/java-11%2B-blue)]()
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue)]((https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt))
 
-# C-Minor
+# C-Minor: A Pedagogical Language Based on High-Level Design Principles
 
 C-Minor is a pedagogical language that has been proposed by Dr. John Minor at the University of Nevada Las Vegas (UNLV) to facilitate the learning of programming languages for first years college students. It follows largely C-style syntax and borrows elements from many other languages such as Fortran 90, Ada, LISP, Java, and Pascal. The main paradigms of the language are imperative and object-oriented. The simplified syntax of C-Minor may serve as a stepping stone to other C style languages for novice programmers while avoiding overly complex constructs they have no need of.
 
@@ -37,7 +37,7 @@ The scope rules are obvious: global names (`func`, `class`, `global`, `const`, a
 
 Every value in C-Minor has a specific data type, which lets it know what kind of data is being specified and how to deal with it. Keep in mind that C-Minor is a *statically typed* language, which means that it needs to know the types of all variables at compile-time. However, the compiler can usually infer what type we want to use based on the value and how to use it. We will look at two data type subsets: *discrete* and *scalar*.
 
-Discrete types consists of boolean, integer, character, and enumeration types (as named in *type* declarations). In C-Minor, the programmer may specify a range for each integer variable, and the compiler will select the correct representation for that use. This allows, for instance, for the creation of a subtype of `CHAR` that contains just the uppercase letters, `CHAR: 'A'..'Z'`. Scalar types, however, include string and floating point numbers. `STRING` is a built-in, dynamic-length string type that automatically allocates and deallocates memory whenever needed (similiar to the `string` library of C++). Instead of requiring programmers to choose a hardware representation for their `FLOAT` variables, which is low-level, C-Minor allows programmers to select the number of digits of precision that is needed, giving a more accurate representation to guarantee the accuracy desired. The table below shows the built-in data types in C-Minor. 
+Discrete types consists of boolean, integer, character, and enumeration types (as named in *type* declarations). In C Minor, the programmer may specify a range for each integer variable, and the compiler will select the correct representation for that use. This allows, for instance, for the creation of a subtype of `CHAR` that contains just the uppercase letters, `CHAR: 'A'..'Z'`. Scalar types, however, include string and floating point numbers. `STRING` is a built-in, dynamic-length string type that automatically allocates and deallocates memory whenever needed (similiar to the `string` library of C++). Instead of requiring programmers to choose a hardware representation for their `FLOAT` variables, which is low-level, C-Minor allows programmers to select the number of digits of precision that is needed, giving a more accurate representation to guarantee the accuracy desired. The table below shows the built-in data types in C Minor. 
 
 <div align="center">
   
@@ -73,7 +73,7 @@ A fixed size array can also be created by including the `Array` keyword.
 INT numbers[5] = Array[5](0)
 ```
 
-Note that mltidimensional arrays must be full in C-Minor, no jagged arrays are possible. Dimensions are listed in a row-major ordering where spatial adjacency is de- termined by the rightmost index.
+Note that mltidimensional arrays must be full in C-Minor, no jagged arrays are possible. Dimensions are listed in a row-major ordering where spatial adjacency is determined by the rightmost index.
 
 ```c++
 INT numbers[3][4][2] = [
@@ -89,7 +89,7 @@ C-Minor allows for segments of arrays to be assigned or used at a time. This con
 
 ### Lists
 
-In addition to arrays, C-Minor also includes a built in indexable list to store a collection of values. While arrays are statically sized, the list is dynamically al- located using one of three list command statements. Elements can be added to and removed from the list during runtime. To facilitate tracking the size of the list, a built-in function is included named `Length`.
+In addition to arrays, C-Minor also includes a built in indexable list to store a collection of values. While arrays are statically sized, the list is dynamically allocated using one of three list command statements. Elements can be added to and removed from the list during runtime. To facilitate tracking the size of the list, a built-in function is included named `Length`.
 
 ## Functions
 
