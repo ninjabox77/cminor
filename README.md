@@ -1,8 +1,6 @@
 # C-Minor
 
-<p>
 C-Minor is a pedagogical language that has been proposed by Dr. John Minor at the University of Nevada Las Vegas (UNLV) to facilitate the learning of programming languages for first years college students. It follows largely C-style syntax and borrows elements from many other languages such as Fortran 90, Ada, LISP, Java, and Pascal. The main paradigms of the language are imperative and object-oriented. The simplified syntax of C-Minor may serve as a stepping stone to other C style languages for novice programmers while avoiding overly complex constructs they have no need of.
-</p>
 
 The work will be focused largely on faithfully building a compiler and a virtual machine for the language. An example of a `hello world!` program written in C-Minor is depicted below:
 
@@ -18,6 +16,14 @@ main {
 
 * John Minor
 * Benjamin Cisneros (<benjcisneros@gmail.com>)
+
+## Basic Structure
+
+Using a `type` declaration creates a new user-defined type (an *enumeration type*) containing the specified list of identifiers with the given ordering and which are treated as new global constants by the compiler.
+
+There are four kinds of variables in C-Minor: `const` variables, which are global, read-only and statically allocated; `global` variables, which are global, read-write and statically allocated; `local` variables, which are read-write and dynamically allocated on entrance to their block of declaration and deallocated on exit; and `multi` (multiple-typed) class objects, which are also local variables but may be assigned different class types at runtime using the `retype` statement. All local names must be assigned a starting value or the label `uninit` (uninitiated), which causes the system to check and give a runtime error if the variable is ever used before being set.
+
+The scope rules are obvious: global names (`func`, `class`, `global`, `const`, and `type` names) have global scope and may never be redefined; and the scope of `local`/`multi` variables (and formal parameters) is their block of declaration, except while the name is redeclared in an inner-nested block (which is allowed). Note that class elements have their own scope rules.
 
 ## Data Types
 
