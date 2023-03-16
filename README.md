@@ -87,7 +87,7 @@ INT numbers[3][4][2] = [
 
 C-Minor allows for segments of arrays to be assigned or used at a time. This concept, called a *slice*, allows for a subset array to be extracted. Only the rightmost dimension is sliceable in this way. This generates a single dimension array containing the values associated with the slice that can either be assigned to or used as part of an assignment. To utilize the slice concept, the last dimension is indexed by `@<integer>..<integer>@` rather than just a single value. Both integers must be within the bounds of the array and the left must be less than or equal to the right.
 
-### Lists
+## Lists
 
 In addition to arrays, C-Minor also includes a built in indexable list to store a collection of values. While arrays are statically sized, the list is dynamically allocated using one of three list command statements. Elements can be added to and removed from the list during runtime. To facilitate tracking the size of the list, a built-in function is included named `Length`.
 
@@ -171,19 +171,19 @@ In C-Minor, statements are lines of code intended to change the state of the pro
 
 ### I/O Statements
 
-The `in` and `out` commands handle I/O using the standard input and output streams. Variables in the in statement may be labeled with an optional “prompt” string which will be printed before the corresponding value is read. In the out statement, an optional minimum-width specifier can be given for each expression, as well as the precision (number of digits to be printed after the decimal point) for arithmetic expressions. `endl` generates a carriage return/line feed.
+The `in` and `out` commands handle I/O using the standard input and output streams. Variables in the in statement may be labeled with an optional *prompt* string which will be printed before the corresponding value is read. In the out statement, an optional minimum-width specifier can be given for each expression, as well as the precision (number of digits to be printed after the decimal point) for arithmetic expressions. `endl` generates a carriage return/line feed.
 
 #### Input
 
 The `in` statement accepts a comma separated list of scalar or discrete variables. Each variable may include a helpful suggestion text for the user by utilizing a *string* followed by a `:` before the variable name. Each incoming input must be coerceable into the specified variable's type. Here is an simple example of how to read user input:
 
-```
+```c++
 in("Enter a number between 0 and 10" : number)
 ```
 
 where `number` is declared as
 
-```
+```c++
 INT number
 ```
 
@@ -195,7 +195,7 @@ Floating point values can also specify a number of decimal places to round to (i
 
 Again, in place of a value, the user can also include the keyword `endl` in the list of values to output. This will insert line feed and/or carriage returns as appropriate.
 
-```
+```c++
 out number endl
 ```
 
