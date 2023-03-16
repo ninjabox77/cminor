@@ -4,7 +4,7 @@
 
 | []() | |
 |--|--|
-| Notes | Among other small changes in syntax, **Version 2.0** of C-Minor has added global read-write variables, eliminated all semicolons, and has replaced the `==` operator with `=`. **Version 3.0** has added the local command, the uninit label, and separate delimeters for constant lists (`@..@`) and arrays (`[...]`) instead of using braces. |
+| Notes | Among other small changes in syntax, **Version 2.0** of C-Minor has added global read-write variables, eliminated all semicolons, and has replaced the `==` operator with `=`. **Version 3.0** has added the local command, the `uninit` label, and separate delimeters for constant lists (`@..@`) and arrays (`[...]`) instead of using braces. |
 
 # C-Minor
 
@@ -58,7 +58,7 @@ Discrete types consists of boolean, integer, character, and enumeration types (a
 Arrays allow for the creation of an indexable collection of variables under a single identifier. It should be noted that arrays indexes start at 1 in C-Minor rather than at 0. The first element of the array felt a more natural semantic concept rather than the offset value from the array pointer. Arrays are created using brackets `[]`, and their length, which is known at compile time, is part of their type signature `[<length>]`.
 
 ```c++
-INT numbers = {1, 2, 3, 4, 5}
+INT numbers = [1, 2, 3, 4, 5]
 ```
 
 The buil-int C-Minor function allows a user to specify a single value inside of `Array(<expression>)` to be assigned to all elements of an array during declaration.
