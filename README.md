@@ -46,6 +46,10 @@ Discrete types consists of boolean, integer, character, and enumeration types (a
   <p>Table 1: Data types.</p>
 </div>
 
+## Arrays
+
+Arrays allow for the creation of an indexable collection of variables under a single identifier. It should be noted that arrays indexes start at 1 in C-Minor rather than at 0. The first element of the array felt a more natural semantic concept rather than the offset value from the array pointer.
+
 ## Functions
 
 While not the same as methods, functions allow programmers to encapsulate a small subprogram that may be called by its unique identifier and a set of optional values. For instance, the `main` function, which serves as many programs' entry point, is one of the language's most significant functions, which you have already seen.
