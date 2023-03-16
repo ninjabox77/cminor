@@ -143,7 +143,11 @@ Note the required ordering of class elements (`protect` before `public` and fiel
 
 Notes on **inheritance**: A derived type can only add new elements to those that it inherits and can never eliminate any, although it may override an inherited method’s definition with a new one, unless that method is labeled **last**. If a non-**last** method is redefined, then the new definition must use the same signature, type, and scope option as the overridden element; otherwise the compiler will give an error. These requirements ensure that a parent class is always a subtype of all its derived classes.
 
-## I/O Statements
+## Statements
+
+In C-Minor, statements are lines of code intended to change the state of the program. Each statement begins with a specific keyword unique to that statement, and generally statement keywords are verbs that hint at what the statement does. The keywords `choice`, `in`, and `out` do not follow this scheme.
+
+### I/O Statements
 
 The `in` and `out` commands handle I/O using the standard input and output streams. Variables in the in statement may be labeled with an optional “prompt” string which will be printed before the corresponding value is read. In the out statement, an optional minimum-width specifier can be given for each expression, as well as the precision (number of digits to be printed after the decimal point) for arithmetic expressions. endl generates a carriage return/line feed.
 
