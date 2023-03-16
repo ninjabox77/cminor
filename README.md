@@ -108,6 +108,34 @@ Each parameter is assigned a *direction* through the use of the `in`, `out`, or 
 * `out` A parameter marked as `out` is essentially passed to the function by reference. Any changes made to the variable will be assigned to the variable used in the function call. Any `out` parameter can only be called with a variable, using a non-variable expression will result in an error. A `out` only variable may only have values assigned to it, it cannot be used as part of an expression.
 * `inout` If both directions are assigned, the parameter can only be called with a variable, can be used in an expression and assigned to. Upon the function's resolution, the value in the parameter will be assigned to its calling variable.
 
+All intrinsic types and data structures can be used as function parameters, including objects, arrays, and lists. Parameter names are used to hold the sizes of array dimensions and these will automatically be treated as in integer parameters. These "conformant array parameters" allow array-processing functions to handle arbitrary-sized data, but not to alter the size or shape of array arguments.
+
+## Classes
+
+A class allows for the merging of vari- ables and functions into a single self contained object. If a class is labeled `abstr` (abstract), the compiler will give an error if the declaration of an object (except `multi`-type objects) uses that class as its type. A `final` class requires the compiler to give an error if any class uses it as a parent. The default case allows a class to have both arbitrary objects and derived classes. Like the function case, any class can be made generic (polymorphic) by specifying and using type parameters.
+
+Class bodies consist of two declaration sections: protect and public. The scope of an element (field or method) declared in the protect area is restricted to only its declaration class and, through inheritance, its derived classes by simply using the element’s name. Elements declared as `public` can be accessed like `protect` elements plus they are also accessible globally by any object of the class, using standard *dot notation*.
+
+Note the required ordering of class elements (`protect` before `public` and fields before methods) as per P10. The declarations of fields and methods are analogous to variables and functions, except that fields are not initialized. Conversely the use and the scope rules of methods are very different from functions, so two different terms (`func` and `method`) are used in C-Minor to avoid confusion.
+
+Notes on **inheritance**: A derived type can only add new elements to those that it inherits and can never eliminate any, although it may override an inherited method’s definition with a new one, unless that method is labeled **last**. If a non-**last** method is redefined, then the new definition must use the same signature, type, and scope option as the overridden element; otherwise the compiler will give an error. These requirements ensure that a parent class is always a subtype of all its derived classes. Here is an example of a class in C-Minor:
+
+```c++
+class Person
+protect {
+  STRING name
+  INT age
+}
+public {
+  method setName(STRING n) => void { name = n }
+  method setAge(INT a) => void { age = a }
+}
+```
+
+## I/O Statements
+
+The `in` and `out` commands handle I/O using the standard input and output streams. Variables in the in statement may be labeled with an optional “prompt” string which will be printed before the corresponding value is read. In the out statement, an optional minimum-width specifier can be given for each expression, as well as the precision (number of digits to be printed after the decimal point) for arithmetic expressions. endl generates a carriage return/line feed.
+
 # License
 
 C-Minor is distributed under the terms of the [MIT License](https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt).
