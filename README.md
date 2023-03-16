@@ -1,3 +1,7 @@
+[![Official project](https://img.shields.io/badge/C--Minor-UNLV-red)]()
+[![GitHub license](https://img.shields.io/badge/License-MIT-blue)]((https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt))
+
+
 # C-Minor
 
 C-Minor is a pedagogical language that has been proposed by Dr. John Minor at the University of Nevada Las Vegas (UNLV) to facilitate the learning of programming languages for first years college students. It follows largely C-style syntax and borrows elements from many other languages such as Fortran 90, Ada, LISP, Java, and Pascal. The main paradigms of the language are imperative and object-oriented. The simplified syntax of C-Minor may serve as a stepping stone to other C style languages for novice programmers while avoiding overly complex constructs they have no need of.
@@ -48,7 +52,7 @@ Discrete types consists of boolean, integer, character, and enumeration types (a
 
 ## Arrays
 
-Arrays allow for the creation of an indexable collection of variables under a single identifier. It should be noted that arrays indexes start at 1 in C-Minor rather than at 0. The first element of the array felt a more natural semantic concept rather than the offset value from the array pointer. Arrays are created using brackets `[]`, and their length, which is known at compile time, is part of their type signature `[length]`.
+Arrays allow for the creation of an indexable collection of variables under a single identifier. It should be noted that arrays indexes start at 1 in C-Minor rather than at 0. The first element of the array felt a more natural semantic concept rather than the offset value from the array pointer. Arrays are created using brackets `[]`, and their length, which is known at compile time, is part of their type signature `[<length>]`.
 
 ```c++
 INT numbers = {1, 2, 3, 4, 5}
@@ -68,7 +72,7 @@ INT numbers[5] = Array[5](0)
 
 Note that mltidimensional arrays must be full in C-Minor, no jagged arrays are possible. Dimensions are listed in a row-major ordering where spatial adjacency is de- termined by the rightmost index.
 
-```
+```c++
 INT numbers[3][4][2] = {
   {{111,112},{121,122},{131,132},{141,142}},
   {{211,212},{221,222},{231,232},{241,242}},
