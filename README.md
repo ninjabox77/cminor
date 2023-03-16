@@ -1,6 +1,6 @@
-[![Official project](https://img.shields.io/badge/C--Minor-UNLV-red)]()
-[![GitHub license](https://img.shields.io/badge/License-MIT-blue)]((https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt))
-
+[![Official project](https://img.shields.io/badge/c--minor-UNLV-red)]()
+[![java11](https://img.shields.io/badge/java-11%2B-blue)]()
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue)]((https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt))
 
 # C-Minor
 
