@@ -18,9 +18,7 @@ main {
 }
 ```
 
-| []() | |
-|--|--|
-| Note | There is a good possibility that you will encounter compile errors or miscompilations when you attempt to compile a program other than the compiler itself. This is basically a one-man project, and I have spent only a few months of my spare time so far.|
+Note that there is a good possibility that you will encounter compile errors or miscompilations when you attempt to compile a program other than the compiler itself. This is basically a one-man project, and I have spent only a few months of my spare time so far.
 
 ### Authors
 
