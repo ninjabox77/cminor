@@ -21,9 +21,9 @@ Note that there is a good possibility that you will encounter compile errors or 
 * John Minor
 * Benjamin Cisneros (<benjcisneros@gmail.com>)
 
-| []() | |
-|--|--|
-| Note | Among other small changes in syntax, **Version 2.0** of C-Minor has added global read-write variables, eliminated all semicolons, and has replaced the `==` operator with `=`. **Version 3.0** has added the local command, the `uninit` label, and separate delimeters for constant lists (`@..@`) and arrays (`[...]`) instead of using braces. |
+### Official Notes
+
+Among other small changes in syntax, **Version 2.0** of C-Minor has added global read-write variables, eliminated all semicolons, and has replaced the `==` operator with `=`. **Version 3.0** has added the local command, the `uninit` label, and separate delimeters for constant lists (`@..@`) and arrays (`[...]`) instead of using braces.
 
 ## Basic Structure
 
@@ -146,6 +146,28 @@ Notes on **inheritance**: A derived type can only add new elements to those that
 ## Statements
 
 In C-Minor, statements are lines of code intended to change the state of the program. Each statement begins with a specific keyword unique to that statement, and generally statement keywords are verbs that hint at what the statement does. The keywords `choice`, `in`, and `out` do not follow this scheme.
+
+<div align="center">
+
+| **Type** | **Keyword** |
+|----------|-------------|
+| variable | `set` |
+| control | `if` |
+| control | `choice` |
+| looping | `loop` |
+| iterator | `for` |
+| iterator | `for@` |
+| iterator | `for[]` |
+| list command | `append` |
+| list command | `insert` |
+| list command | `remove` |
+| console I/O | `out` |
+| console I/O | `in` |
+| program termination | `stop` |
+| void function call | `call` |
+| function/method return | `return` |
+
+</div>
 
 ### I/O Statements
 
