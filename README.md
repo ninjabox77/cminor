@@ -86,7 +86,7 @@ While not the same as methods, functions allow programmers to encapsulate a smal
 ```c++
 main {
   out "hello world!"
-  a_function()
+  a_function("a function")
 }
 
 func a_function(in STRING s) => void {
