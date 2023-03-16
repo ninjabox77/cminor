@@ -79,6 +79,14 @@ INT numbers[3][4][2] = {
 }
 ```
 
+### Slices
+
+C-Minor allows for segments of arrays to be assigned or used at a time. This concept, called a *slice*, allows for a subset array to be extracted. Only the rightmost dimension is sliceable in this way. This generates a single dimension array containing the values associated with the slice that can either be assigned to or used as part of an assignment. To utilize the slice concept, the last dimension is indexed by `@<integer>..<integer>@` rather than just a single value. Both integers must be within the bounds of the array and the left must be less than or equal to the right.
+
+### Lists
+
+In addition to arrays, C-Minor also includes a built in indexable list to store a collection of values. While arrays are statically sized, the list is dynamically al- located using one of three list command statements. Elements can be added to and removed from the list during runtime. To facilitate tracking the size of the list, a built-in function is included named `Length`.
+
 ## Functions
 
 While not the same as methods, functions allow programmers to encapsulate a small subprogram that may be called by its unique identifier and a set of optional values. For instance, the `main` function, which serves as many programs' entry point, is one of the language's most significant functions (which you have already seen).
