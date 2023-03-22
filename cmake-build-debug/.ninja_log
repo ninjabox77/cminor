@@ -1,0 +1,5 @@
+# ninja log v5
+0	41	1679442887934146629	build.ninja	c5ec80bdbca71b77
+2	375	1679348230985989412	CMakeFiles/minor.dir/main.cpp.o	67daa13a6099a072
+3	433	1679207632502553470	CMakeFiles/minor.dir/lex/minor-token.cc.o	ca2cceaa57d0b153
+375	411	1679348231023214116	minor	b0c7dcafda725be
