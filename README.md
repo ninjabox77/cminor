@@ -4,9 +4,7 @@
 
 # C Minor: A Pedagogical Language Based on High-Level Design Principles
 
-C Minor is a pedagogical language that has been proposed by Dr. John Minor at the University of Nevada Las Vegas (UNLV) to facilitate the learning of programming languages for first years college students. It mostly uses a C-style syntax and incorporates parts of a variety of other languages, including Fortran 90, Ada, LISP, Java, and Pascal. Nontheless, the simplified syntax of C Minor may serve as a stepping stone to other C-style languages for novice programmers while avoiding overly complex constructs they have no need of. The main paradigms of the language are imperative and object-oriented.
-
-The work will be focused largely on faithfully building a compiler and a virtual machine for the language. An example of a `hello world!` program written in C Minor is depicted below:
+C Minor is a pedagogical language that has been proposed by Dr. John Minor at the University of Nevada Las Vegas (UNLV) to facilitate the learning of programming languages for first years college students. It mostly uses a C-style syntax and incorporates parts of a variety of other languages, including Fortran 90, Ada, LISP, Java, and Pascal. Nontheless, the simplified syntax of C Minor may serve as a stepping stone to other C-style languages for novice programmers while avoiding overly complex constructs they have no need of. The main paradigms of the language are imperative and object-oriented. An example of a `hello world!` program written in C Minor is depicted below:
 
 ```c++
 main {
@@ -16,6 +14,8 @@ main {
 
 ### Stages
 
+The work will be focused largely on faithfully building a compiler and a virtual machine for the language. 
+
 1. Lexer (without preprocessor)
 2. Parser (supports basic syntax)
 3. Semantic Analysis
@@ -24,15 +24,15 @@ main {
 ### More information about this project:
 
 *What is the purpose of this project?*
-* Provide a visual aid to help first-year students who are learning to code for the first time or who have some programming experience but need to solidify their comprehension.
-* Provide a visual aid to help second-year students who are learning assembly for the first time.
+* Provide a visual aid to help first years colleque students who are learning to code for the first time or who have some programming experience but need to solidify their comprehension.
+* Provide a visual aid to help second years colleque students who are learning assembly for the first time.
 * Make it C++ compliean.
 
 *Why use C++ insteand of C?*
 
 C++ makes it easier to organize large amount of code, which is important, giving that this ia a one-man project. Note that there is a good possibility that you will encounter compile errors or miscompilations when you attempt to compile a program other than the compiler itself. This is basically a one-man project, and I will spent only a few months of my spare time so far.
 
-* What platform will it be targetting?
+*What platform will it be targetting?*
 
 Mainly Linux.
 
