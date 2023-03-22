@@ -26,7 +26,7 @@ The work will be focused largely on faithfully building a compiler and a virtual
 *What is the purpose of this project?*
 * Provide a visual aid to help first years colleque students who are learning to code for the first time or who have some programming experience but need to solidify their comprehension.
 * Provide a visual aid to help second years colleque students who are learning assembly for the first time.
-* Make it C++ compliean.
+* Make it C++ compliant.
 
 *Why use C++ insteand of C?*
 
@@ -38,7 +38,6 @@ Mainly Linux.
 
 ### Authors
 
-* John Minor
 * Benjamin Cisneros (<benjcisneros@gmail.com>)
 
 ### Official Notes
