@@ -1,5 +1,9 @@
 # ninja log v5
-0	41	1679442887934146629	build.ninja	c5ec80bdbca71b77
+0	41	1679444115391315788	build.ninja	c5ec80bdbca71b77
 2	375	1679348230985989412	CMakeFiles/minor.dir/main.cpp.o	67daa13a6099a072
-3	433	1679207632502553470	CMakeFiles/minor.dir/lex/minor-token.cc.o	ca2cceaa57d0b153
 375	411	1679348231023214116	minor	b0c7dcafda725be
+2	27	1679444124504110472	CMakeFiles/minor.dir/lex/minor_lexer.cc.o	5e1b970ec9ac8e7d
+1	287	1679444124761639909	CMakeFiles/minor.dir/main.cpp.o	74fff563a3caa8e2
+2	287	1679444124762679911	CMakeFiles/minor.dir/lex/minor_file.cc.o	8a8895f6aecf6f89
+2	293	1679444124768870588	CMakeFiles/minor.dir/lex/minor_token.cc.o	73285c6f9f5c8860
+293	319	1679444124796079426	minor	1fda22c1ad02f6b
