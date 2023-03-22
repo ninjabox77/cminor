@@ -1,5 +1,5 @@
-[![Official project](https://img.shields.io/badge/c--minor-UNLV-red)]()
-[![java11](https://img.shields.io/badge/java-11%2B-blue)]()
+[![Official project](https://img.shields.io/badge/c%20minor-UNLV-red)]()
+[![c++17](https://img.shields.io/badge/c%2B%2B-17-orange)]()
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue)]((https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt))
 
 # C Minor: A Pedagogical Language Based on High-Level Design Principles
