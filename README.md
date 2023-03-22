@@ -216,7 +216,7 @@ Floating point values can also specify a number of decimal places to round to (i
 Finally, in place of a value, the user can also include the keyword `endl` in the list of values to output. This will insert line feed and/or carriage returns as appropriate.
 
 ```c++
-out number endl
+out "the number is ", number endl
 ```
 
 
