@@ -33,7 +33,7 @@ The work will be focused largely on faithfully building a compiler and a virtual
 
 #### Why use C++ insteand of C?
 
-C++ makes it easier to organize large amount of code, which is important, giving that this ia a one-man project.
+C++ makes it easier to organize large amount of code, which is important giving that this ia a one-man project.
 
 #### What platform will it be targetting?
 
