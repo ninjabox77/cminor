@@ -64,7 +64,7 @@ Discrete types consists of boolean, integer, character, and enumeration types (a
 <div align="center">
   
 | Type Name | Keyword | Implementation | Group |
-|:---------|:---------|----------------|-------|
+|:---------:|:---------:|----------------|-------|
 | Boolean | `BOOL` | boolean | Discrete |
 | Integer | `INT` | int64 | Discrete |
 | Character | `CHAR` | string | Discrete |
@@ -167,7 +167,9 @@ Class bodies consist of two declaration sections: `protect` and `public`. The sc
 
 Note the required ordering of class elements (`protect` before `public` and fields before methods). The declarations of fields and methods are analogous to variables and functions, except that fields are not initialized. Conversely the use and the scope rules of methods are very different from functions, so two different terms (`func` and `method`) are used in C Minor to avoid confusion.
 
-Notes on **inheritance**: A derived type can only add new elements to those that it inherits and can never eliminate any, although it may override an inherited method’s definition with a new one, unless that method is labeled **last**. If a non-**last** method is redefined, then the new definition must use the same signature, type, and scope option as the overridden element; otherwise the compiler will give an error. These requirements ensure that a parent class is always a subtype of all its derived classes.
+#### Notes on **inheritance**
+
+A derived type can only add new elements to those that it inherits and can never eliminate any, although it may override an inherited method’s definition with a new one, unless that method is labeled **last**. If a non-**last** method is redefined, then the new definition must use the same signature, type, and scope option as the overridden element; otherwise the compiler will give an error. These requirements ensure that a parent class is always a subtype of all its derived classes.
 
 ## Statements
 
@@ -272,14 +274,31 @@ This vastly improved counter-based loop requires that the counter identifier be 
 The discrete-type `for` always requires a lower and upper bound be specified for the counter, and these bounds are static. That is, they will not change during the loop execution, even if a variable used in their expression is changed in the body of the loop. Again, this makes the for-loop safe. When using the in option, the counter is automatically initialized to the lower bound and incremented by 1 (or `Next` function) on each iteration until reaching the upper bound. When the inrev (in reverse) option is specified, the counter is initialized to the upper bound and decremented by 1 (or `Prev`) on each iteration until the lower bound is reached. Stepping by other values has been eliminated because of its rare use and easy simulation. Note that if the lower bound expression evaluates to a value larger than the upper bound expression on entrance to the `for`, it is not an error but instead causes the execution of the loop body to be skipped entirely.
 
 ```c++
-for (INT i in 1...10) { ... }
+for (INT i in 1...10) {
+  out i, " "
+}
+// output: 1 2 3 4 5 6 7 8 9 10
 ```
 
 There are two other forms of the for-loop: an iterator for array expressions (`for[]`) and an iterator for list expressions (`for@`). In both these forms, the loop `<id>` will automatically be set to a different element within the array/list on each iteration, proceeding from the first element to the last (if `in` is chosen) or from the last element to the first (if `inrev` is chosen). Again, row major ordering is used on multi-dimensional arrays. These statements allow the programmer to process all elements in an array or list without the need for an explicit counter (or counters). Note that the for@ loop body may not change the size of the `<list expr>`; ie., no appends, removes, nor inserts may be used.
 
 ```c++
-for[] (INT i in Array[10](0)) { ... }
+INT arr[10] = {1,2,3,4,5,6,7,8,9,10}
+for[] (INT value in arr) {
+  out value, " "
+}
+// output: 1 2 3 4 5 6 7 8 9 10
 ```
+
+or
+
+```c++
+for@ (INT i inrev @1...10@) {
+  out i, " "
+}
+// output: 10 9 8 7 6 5 4 3 2 1
+```
+
 # License
 
 C Minor is distributed under the terms of the [MIT License](https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt).
