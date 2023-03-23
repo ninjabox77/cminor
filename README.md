@@ -124,7 +124,7 @@ main {
 }
 
 func a_function(in STRING s) => void {
-  out "from " + s
+  out "from ", s
 }
 ```
 The `func` keyword is preceded by optional modifiers, and followed by a parameter list, an arrow, a return type, and a block to execute upon being called. Functions can either return a direct result (have a non-`void` return type) or work entirely through side-effects (a `void` result). Non-`void` functions may have side-effects, but if declared `pure`, the compiler will check and warn the user if any side-effects are being used. Note that a `void` function that is also labeled pure will do nothing.
@@ -243,7 +243,27 @@ if (a > b) {
 
 The multiple-choice (`choice`) statement replaces the error-prone switch statement of C++, Java, etc. Like in the `if` statement, the other case is always required and braces are required around each case segment. A list of labels is allowed on each case segment, including ranges of values from `<lower value> ... <upper value>`. And most importantly, only the one correctly labeled choice is executed and then the statement is exited. The compiler will give an error if the same label appears attached to more than one code segment or if the constants are not of the same type as the discrete expression.
 
+```
+choice (day)
+on Monday...Wednesday { ... }
+on Thursday { ... }
+on Friday { ... }
+other { ... }
+```
 
+#### Looping
+
+The block associated with the `loop` statement repeats until the `until` statement's `BOOL` expression has a `true` value. That is, the conditional associated with the `loop` is an ending condition rather than a continuation condition and can be placed anywhere in the loop's sequence. No `break` style command exists to terminate the loop outside of the until statement. This natural, general loop form subsumes *all* other logical loops, eg. `while`, `do-while`, etc., as well as the unstructured `break` and `continue` commands. For example,
+
+```
+loop {
+<statement>
+until ...
+<statement>
+}
+```
+
+where either one of the `<statement>`s is optional.
 
 # License
 
