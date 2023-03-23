@@ -131,6 +131,10 @@ The `func` keyword is preceded by optional modifiers, and followed by a paramete
 
 The default implementation for functions is non-recursive, because that is the more common use and requires the least amount of run-time overhead. If recursion is desired, the function must be declared `recurs`.
 
+### Return Type
+
+Functions must declare a single type to return as a value upon the completion of its execution. If a function is declared to have a void return type, it uses the `return` keyword with no expression and can the function can never be used as part of an expression. If the return type is an array, it can utilize array size parameters to provide dynamic dimensions for the return value
+
 ### Parameters
 
 We can specify that a function has parameters, which are unique variables that are part of the signature of the function. Notice that *all* functions can employ static parametric polymorphism by specifying and using type parameters. If a type parameter is labeled `discr` (discrete), then it is restricted to bein called only with a *discrete type* argument; `scalar` requires a *scalar type*; and a `class` requires an *identifier* argument only. The unspecified default allows any legal *type* as an argument.
@@ -220,6 +224,25 @@ Finally, in place of a value, the user can also include the keyword `endl` in th
 ```c++
 out "the number is ", number, endl
 ```
+
+### Conditionals
+
+C Minor features two control statements that allows for code to be executed or not based on some condition.
+
+#### If
+
+The `if` statement is similar to that found in C++, Java, etc. except that braces are always required around each conditional code segment for readability, and the `else` condition is always required even when empty (which is signified by `else{}`). These improvements eliminate common programming errors like the ambiguous else-association problem. Notice also that all conditions *must* be Boolean expressions, which allows the `=` operator to be used here only for the equality check and *never* as the assignment operator; here is an example:
+
+```c++
+if (a > b) {
+  ...
+} else {}
+```
+
+#### Choice
+
+The multiple-choice (`choice`) statement replaces the error-prone switch statement of C++, Java, etc. Like in the `if` statement, the other case is always required and braces are required around each case segment. A list of labels is allowed on each case segment, including ranges of values from `<lower value> ... <upper value>`. And most importantly, only the one correctly labeled choice is executed and then the statement is exited. The compiler will give an error if the same label appears attached to more than one code segment or if the constants are not of the same type as the discrete expression.
+
 
 
 # License
