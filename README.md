@@ -12,6 +12,8 @@ main {
 }
 ```
 
+Note that there is a good possibility that you will encounter compile errors or miscompilations when you attempt to compile a program other than the compiler itself. Since this is basically a one-man project, I will spent only a few months of my spare time so far.
+
 ### Stages
 
 The work will be focused largely on faithfully building a compiler and a virtual machine for the language. 
@@ -31,7 +33,7 @@ The work will be focused largely on faithfully building a compiler and a virtual
 
 #### Why use C++ insteand of C?
 
-C++ makes it easier to organize large amount of code, which is important, giving that this ia a one-man project. Note that there is a good possibility that you will encounter compile errors or miscompilations when you attempt to compile a program other than the compiler itself. Since this is basically a one-man project, I will spent only a few months of my spare time so far.
+C++ makes it easier to organize large amount of code, which is important, giving that this ia a one-man project.
 
 #### What platform will it be targetting?
 
