@@ -234,7 +234,7 @@ C Minor features two control statements that allows for code to be executed or n
 The `if` statement is similar to that found in C++, Java, etc. except that braces are always required around each conditional code segment for readability, and the `else` condition is always required even when empty (which is signified by `else{}`). These improvements eliminate common programming errors like the ambiguous else-association problem. Notice also that all conditions *must* be Boolean expressions, which allows the `=` operator to be used here only for the equality check and *never* as the assignment operator; here is an example:
 
 ```c++
-if (<expression>) {
+if (<expr>) {
   ...
 } else {}
 ```
@@ -269,7 +269,9 @@ This vastly improved counter-based loop requires that the counter identifier be 
 
 #### Iterators
 
-The discrete-type `for` always requires a lower and upper bound be specified for the counter, and these bounds are static. That is, they will not change during the loop execution, even if a variable used in their expression is changed in the body of the loop. Again, this makes the for-loop safe. When using the in option, the counter is automatically initialized to the lower bound and incremented by 1 (or `Next` function) on each iteration until reaching the upper bound. When the inrev (in reverse) option is specified, the counter is initialized to the upper bound and decremented by 1 (or `Prev`) on each iteration until the lower bound is reached. Stepping by other values has been eliminated because of its rare use and easy simulation. Note that if the lower bound expression evaluates to a value larger than the upper bound expression on entrance to the `for`, it is not an error but instead causes the execution of the loop body to be skipped entirely
+The discrete-type `for` always requires a lower and upper bound be specified for the counter, and these bounds are static. That is, they will not change during the loop execution, even if a variable used in their expression is changed in the body of the loop. Again, this makes the for-loop safe. When using the in option, the counter is automatically initialized to the lower bound and incremented by 1 (or `Next` function) on each iteration until reaching the upper bound. When the inrev (in reverse) option is specified, the counter is initialized to the upper bound and decremented by 1 (or `Prev`) on each iteration until the lower bound is reached. Stepping by other values has been eliminated because of its rare use and easy simulation. Note that if the lower bound expression evaluates to a value larger than the upper bound expression on entrance to the `for`, it is not an error but instead causes the execution of the loop body to be skipped entirely.
+
+There are two other forms of the for-loop: an iterator for array expressions (`for[]`) and an iterator for list expressions (`for@`). In both these forms, the loop `<id>` will automatically be set to a different element within the array/list on each iteration, proceeding from the first element to the last (if `in` is chosen) or from the last element to the first (if `inrev` is chosen). Again, row major ordering is used on multi-dimensional arrays. These statements allow the programmer to process all elements in an array or list without the need for an explicit counter (or counters). Note that the for@ loop body may not change the size of the `<list expr>`; ie., no appends, removes, nor inserts may be used.
 
 # License
 
