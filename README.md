@@ -234,7 +234,7 @@ C Minor features two control statements that allows for code to be executed or n
 The `if` statement is similar to that found in C++, Java, etc. except that braces are always required around each conditional code segment for readability, and the `else` condition is always required even when empty (which is signified by `else{}`). These improvements eliminate common programming errors like the ambiguous else-association problem. Notice also that all conditions *must* be Boolean expressions, which allows the `=` operator to be used here only for the equality check and *never* as the assignment operator; here is an example:
 
 ```c++
-if (a > b) {
+if (<expression>) {
   ...
 } else {}
 ```
@@ -263,7 +263,13 @@ until ...
 }
 ```
 
-where either one of the `<statement>`s is optional.
+where either one of the `<statement>`s is optional. 
+
+This vastly improved counter-based loop requires that the counter identifier be declared in the heading so that its scope is only the loop body. This ensures that no outside variable name is accidentally used and changed by the loop (a common error). Also the counter is treated as a read-only variable in the loop body, so that the compiler will give an error if the programmer tries to change it. This requirement guarantees that the loop is *safe*; that is, it will always finish and it cannot be changed (accidentally or on purpose) into an infinite loop. Students should be taught to always use the `loop` construct for all indefinite (unsafe) loops and reserve the for for definite (safe) loops.
+
+#### Iterators
+
+The discrete-type `for` always requires a lower and upper bound be specified for the counter, and these bounds are static. That is, they will not change during the loop execution, even if a variable used in their expression is changed in the body of the loop. Again, this makes the for-loop safe. When using the in option, the counter is automatically initialized to the lower bound and incremented by 1 (or `Next` function) on each iteration until reaching the upper bound. When the inrev (in reverse) option is specified, the counter is initialized to the upper bound and decremented by 1 (or `Prev`) on each iteration until the lower bound is reached. Stepping by other values has been eliminated because of its rare use and easy simulation. Note that if the lower bound expression evaluates to a value larger than the upper bound expression on entrance to the `for`, it is not an error but instead causes the execution of the loop body to be skipped entirely
 
 # License
 
