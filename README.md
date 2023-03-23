@@ -200,7 +200,7 @@ The `in` and `out` commands handle I/O using the standard input and output strea
 The `in` statement accepts a comma separated list of scalar or discrete variables. Each variable may include a helpful suggestion text for the user by utilizing a *string* followed by a `:` before the variable name. Each incoming input must be coerceable into the specified variable's type. Here is an simple example of how to read user input:
 
 ```c++
-in("Enter a number between 0 and 10" : number)
+in "Enter a number between 0 and 10" : number
 ```
 
 where `number` is declared as
@@ -218,7 +218,7 @@ Floating point values can also specify a number of decimal places to round to (i
 Finally, in place of a value, the user can also include the keyword `endl` in the list of values to output. This will insert line feed and/or carriage returns as appropriate.
 
 ```c++
-out("the number is " : number, endl)
+out "the number is ", number, endl
 ```
 
 
