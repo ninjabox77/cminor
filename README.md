@@ -41,7 +41,7 @@ Mainly Linux and Unix-platforms.
 
 ### Authors
 
-* Benjamin Cisneros (<benjcisneros@gmail.com>)
+* Benjamin Cisneros (b4ben[AT]gmx.com)
 
 ### Official Notes
 
@@ -59,7 +59,7 @@ The scope rules are obvious: global names (`func`, `class`, `global`, `const`, a
 
 Every value in C Minor has a specific data type, which lets it know what kind of data is being specified and how to deal with it. Keep in mind that C Minor is a *statically typed* language, which means that it needs to know the types of all variables at compile-time. However, the compiler can usually infer what type we want to use based on the value and how to use it. We will look at two data type subsets: *discrete* and *scalar*.
 
-Discrete types consists of boolean, integer, character, and enumeration types (as named in *type* declarations). In C Minor, the programmer may specify a range for each integer variable, and the compiler will select the correct representation for that use. This allows, for instance, for the creation of a subtype of `CHAR` that contains just the uppercase letters, `CHAR: 'A'..'Z'`. Scalar types, however, include string and floating point numbers. `STRING` is a built-in, dynamic-length string type that automatically allocates and deallocates memory whenever needed (similiar to the `string` library of C++). Instead of requiring programmers to choose a hardware representation for their `FLOAT` variables, which is low-level, C Minor allows programmers to select the number of digits of precision that is needed, giving a more accurate representation to guarantee the accuracy desired. The table below shows the built-in data types in C Minor. 
+Discrete types consists of boolean, integer, character, and enumeration types (as named in *type* declarations). In C Minor, the programmer may specify a range for each integer variable, and the compiler will select the correct representation for that use. This allows, for instance, for the creation of a subtype of `CHAR` that contains just the uppercase letters, `CHAR: "A"..."Z"`. Scalar types, however, include string and floating point numbers. `STRING` is a built-in, dynamic-length string type that automatically allocates and deallocates memory whenever needed (similiar to the `string` library of C++). Instead of requiring programmers to choose a hardware representation for their `FLOAT` variables, which is low-level, C Minor allows programmers to select the number of digits of precision that is needed, giving a more accurate representation to guarantee the accuracy desired. The table below shows the built-in data types in C Minor. 
 
 <div align="center">
   
@@ -95,7 +95,7 @@ A fixed size array can also be created by including the `Array` keyword.
 INT numbers[5] = Array[5](0)
 ```
 
-Note that mltidimensional arrays must be full in C Minor, no jagged arrays are possible. Dimensions are listed in a row-major ordering where spatial adjacency is determined by the rightmost index.
+Note that mutidimensional arrays must be full in C Minor, no jagged arrays are possible. Dimensions are listed in a row-major ordering where spatial adjacency is determined by the rightmost index.
 
 ```c++
 INT numbers[3][4][2] = [
@@ -107,11 +107,22 @@ INT numbers[3][4][2] = [
 
 ### Slices
 
-C Minor allows for segments of arrays to be assigned or used at a time. This concept, called a *slice*, allows for a subset array to be extracted. Only the rightmost dimension is sliceable in this way. This generates a single dimension array containing the values associated with the slice that can either be assigned to or used as part of an assignment. To utilize the slice concept, the last dimension is indexed by `@<integer>..<integer>@` rather than just a single value. Both integers must be within the bounds of the array and the left must be less than or equal to the right.
+C Minor allows for segments of arrays to be assigned or used at a time. This concept, called a *slice*, allows for a subset array to be extracted. Only the rightmost dimension is sliceable in this way. This generates a single dimension array containing the values associated with the slice that can either be assigned to or used as part of an assignment. To utilize the slice concept, the last dimension is indexed by `@<integer>...<integer>@` rather than just a single value. Both integers must be within the bounds of the array and the left must be less than or equal to the right.
 
 ## Lists
 
-In addition to arrays, C Minor also includes a built in indexable list to store a collection of values. While arrays are statically sized, the list is dynamically allocated using one of three list command statements. Elements can be added to and removed from the list during runtime. To facilitate tracking the size of the list, a built-in function is included named `Length`.
+In addition to arrays, C Minor also includes a built in indexable list to store a collection of values. While arrays are statically sized, the list is dynamically allocated using one of three list command statements. Elements can be added to and removed from the list during runtime.
+
+```c++
+List l1 = @1,2,3,4,5@
+List l2 = uninit
+append l2 = 6
+append l1 = l2
+insert l1@3@ = 100
+out "size: ", Length(l1), ", values: ", l1, endl
+```
+
+The `append` command adds a new element or sublist to the end of the list specified before the `=` operator, while `insert` puts a new element or sublist into the list at the location specified by the integer expression (Again, the first element is 1, the second element is 2, and so on). `insert` will automatically reorder the rest of the elements so that they remain in the same order following the inserted element(s). The `remove` command does the opposite of insert, it deletes the indicated element(s) and merges the following values. All of these commands automatically allocate or recover space as needed, and if heap space is ever exhausted, a garbage collection routine will be automatically run. Lastly, to facilitate tracking the size of the list, a built-in function is included named `Length`.
 
 ## Functions
 
@@ -145,7 +156,7 @@ Each parameter is assigned a *direction* through the use of the `in`, `out`, or 
 * `out` A parameter marked as `out` is essentially passed to the function by reference. Any changes made to the variable will be assigned to the variable used in the function call. Any `out` parameter can only be called with a variable, using a non-variable expression will result in an error. A `out` only variable may only have values assigned to it, it cannot be used as part of an expression.
 * `inout` If both directions are assigned, the parameter can only be called with a variable, can be used in an expression and assigned to. Upon the function's resolution, the value in the parameter will be assigned to its calling variable.
 
-All intrinsic types and data structures can be used as function parameters, including objects, arrays, and lists. Parameter names are used to hold the sizes of array dimensions and these will automatically be treated as in integer parameters. These "conformant array parameters" allow array-processing functions to handle arbitrary-sized data, but not to alter the size or shape of array arguments.
+All intrinsic types and data structures can be used as function parameters, including objects, arrays, and lists. Parameter names are used to hold the sizes of array dimensions and these will automatically be treated as in integer parameters. These *conformant array parameters* allow array-processing functions to handle arbitrary-sized data, but not to alter the size or shape of array arguments.
 
 ## Classes
 
@@ -212,7 +223,7 @@ in "Enter a number between 0 and 10" : number
 where `number` is declared as
 
 ```c++
-INT number
+INT number = ...
 ```
 
 #### Output
